@@ -1,0 +1,539 @@
+@media (min-width: 768px) {
+    .row.d-flexLogin.loginbase {
+        display: block;
+        /* flex-wrap: wrap; */
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .mis-data label {
+        font-size: 13px;
+        margin-top: 0
+    }
+
+    .maR30,
+    .maT30 {
+        margin-right: 0;
+        margin-top: 0
+    }
+}
+
+@media (min-width: 767px) {
+    .alternateSticky{
+        width:60% !important;
+        text-align: left !important;
+    }
+    
+    .sm-hide {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+
+
+    .login-container {
+        height: 100vh !important;
+        min-height: unset;
+    }
+
+
+    .mt-sm-20 {
+        margin-top: 20px !important;
+    }
+
+    .cashflow2 .sticky-table table td.sticky-cell,
+    .cashflow3 .sticky-table table td.sticky-cell {
+        max-width: 180px;
+        white-space: normal;
+    }
+
+    .btn-remove {
+        position: absolute;
+        right: 2px;
+        padding: 0;
+        bottom: 7px;
+    }
+
+    .btn-remove.btm32 {
+
+        bottom: 32px !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .d-md-show{
+        display:none !important
+    }
+
+    .fa-minus-circle.delete {
+        font-size: 24px;
+    }
+
+    .delete .fa-minus-circle {
+        font-size: 26px;
+    }
+
+    .mt-smm-20 {
+        margin-top: 20px !important;
+    }
+
+    .pagination-lg>li>a,
+    .pagination-lg>li>span {
+        padding: 7px 11px;
+    }
+
+    .search-div input[type="text"] {
+        width: 88%;
+    }
+
+    .resultClient h2 {
+        font-size: 18px;
+    }
+
+    .result h2 {
+        font-size: 18px;
+
+    }
+
+    .prefoption {
+        margin-top: 15px;
+    }
+
+    .alternateTbl {
+        width: 100% !important
+    }
+
+    .btn-generate {
+        margin-top: 20px;
+        text-align: center
+    }
+
+
+    header .top-head,
+    .content-wrapper {
+        width: auto !important
+    }
+
+    .completed-data .item {
+        margin-bottom: 10px;
+    }
+
+    .displayData-container {
+        margin-top: 40px;
+    }
+
+    .btn-addnow {
+        margin-top: 0;
+        text-align: center
+    }
+
+    .btn-addnow input,
+    .btn-addnow .input {
+        margin-top: 0
+    }
+
+    .checkBox .form-group {
+        margin-bottom: 35px;
+    }
+
+    .select {
+        margin-top: 20px;
+    }
+
+    #sidebar {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+        margin-left: -80px !important;
+    }
+
+    a[aria-expanded="false"]::before,
+    a[aria-expanded="true"]::before {
+        top: auto;
+        bottom: 5px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+
+    #sidebar.active {
+        margin-left: 0 !important;
+    }
+
+    #sidebar .sidebar-header h3,
+    #sidebar .CTAs {
+        display: none;
+    }
+
+    #sidebar .sidebar-header strong {
+        display: block;
+    }
+
+    #sidebar ul li a {
+        padding: 20px 10px;
+    }
+
+    #sidebar ul li a span {
+        font-size: 0.85em;
+    }
+
+    #sidebar ul li a i {
+        margin-right: 0;
+        display: block;
+    }
+
+    #sidebar ul ul a {
+        padding: 10px !important;
+    }
+
+    #sidebar ul li a i {
+        font-size: 1.3em;
+    }
+
+    #sidebar {
+        margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+
+    .ttlInvestment {
+        margin-top: 0;
+        padding-top: 12px;
+    }
+
+    .ttlInvestment .material-form-field-label {
+        top: 23px
+    }
+
+    .allocatorInput .select-text:focus~.allocatorInput .select-label,
+    .allocatorInput .select-text:valid~.select-label {
+        top: -16px
+    }
+
+    .cashflowinputTbl .paL40 {
+        padding-left: 10px
+    }
+
+
+}
+
+@media (max-width: 767px) {
+
+    .dashboard-date .form-group {
+        margin-bottom: 0
+    }
+
+    body .userLandingtbl .form-inline label {
+        width: 15% !important
+    }
+
+    .cashflowinputTbl td {
+        display: block
+    }
+
+    .cashflowinputTbl td select {
+        width: 100%
+    }
+
+    .content-wrapper h1 {
+        margin-bottom: 33px;
+        padding-left: 44px;
+    }
+
+    .content-wrapper h1 img {
+        position: absolute;
+        width: 40px;
+        left: 0;
+        top: -10px;
+    }
+
+    .sticky-table {
+        max-height: 80vh;
+    }
+
+    .dashboard-date .mis-data .score input {
+        width: 45px !important
+    }
+
+    .selectType .md-radio {
+        margin-bottom: 10px;
+    }
+
+    /* .btn-addnow{ margin-bottom: 10px;} */
+    .completed-data span {
+        font-size: 20px;
+    }
+
+    .completed-data label {
+        font-size: 13px;
+    }
+
+    .allocatorInput .item .md-radio {
+        margin-right: 10px;
+    }
+
+    .cashflowinputTbl .row {
+        margin-bottom: 10px;
+    }
+
+    .addGaal {
+        padding: 0
+    }
+
+
+}
+
+@media (max-width: 640px) {
+
+
+    form.marketsearch select#chnagefmp {
+        left: -15%;
+        top: 20px;
+    }
+
+    .cashflowinputTbl .item {
+        margin-bottom: 10px;
+    }
+
+    .cashflowinputTbl input[type=text],
+    .cashflowinputTbl select {
+        font-size: 12px;
+    }
+
+    .hamburger {
+        top: 8px;
+    }
+
+    header .top-head {
+        height: 39px;
+    }
+
+    .logoBase img {
+        width: 42%
+    }
+
+    .logOutBase {
+        position: absolute;
+        right: 5px;
+        z-index: 11
+    }
+
+    .logOutBase .addProp {
+        margin-top: 2px;
+        margin-right: 0px;
+        line-height: 39px;
+    }
+
+    .logOutBase .logout {
+        display: none
+    }
+
+    .addAllocation {
+        margin-bottom: 15px;
+    }
+
+    .addAllocation input[type=text] {
+        width: 100%
+    }
+
+    .select-text:focus~.select-label,
+    .select-text:valid~.select-label {
+        top: -18px
+    }
+
+    .pageNext {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login-alert {
+        width: auto !important;
+        margin: 25px 15px 0
+    }
+
+    .loginbase {
+        width: auto;
+        height: inherit;
+        margin: 25px 15px 0
+    }
+
+    .loginbase .btn-addnow {
+        margin-top: 45px;
+    }
+
+    .loginform {
+        padding: 30px;
+    }
+
+    .logBg {
+        height: auto;
+        border-radius: 6px 6px 0 0
+    }
+
+    .logBg h1 {
+        font-size: 40px;
+        padding-left: 0;
+        margin: 0
+    }
+
+    .displayData-container {
+        margin-top: 25px;
+    }
+
+    .content-wrapper {
+        padding: 20px 0;
+    }
+
+    .dashboard-date {
+        margin-top: 10px;
+        padding-top: 00px;
+        margin-bottom: 0px;
+    }
+
+    .dashboard-date .form-inline label {
+        text-align: left !important;
+    }
+
+    .dashboard-date input[type=text],
+    .dashboard-date select {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .dashboard-date .input-group-addon {
+        /* top:33px;  */
+    }
+
+
+    .queContainer .pageCount {
+        text-align: center
+    }
+
+    .allocatorInput .item {
+        margin-bottom: 10px;
+        padding-right: 0
+    }
+
+    .equity-drop {
+        margin-top: 30px;
+    }
+
+    .mb-md-15 {
+        margin-bottom: 15px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .addProp {
+        margin-top: 2px;
+        margin-right: 2px;
+    }
+
+    .searchInput input {
+        margin-bottom: 10px;
+    }
+
+    .md-radio label {
+        font-size: 12px;
+    }
+
+    .allocationTbl {
+        width: 100% !important
+    }
+
+    /*
+  .tabs {
+    display: none;
+  }
+*/
+    .tab_drawer_heading {
+        background-color: #ccc;
+        color: #fff;
+        border-top: 1px solid #333;
+        margin: 0;
+        padding: 5px 20px;
+        display: block;
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .d_active {
+        background-color: #666;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .completed-data label {
+        padding: 0 25px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .cfGoal input::placeholder{
+        font-size: 10px;
+    }
+    
+    .cfGoal select{
+        font-size: 9px;
+    }
+    
+    .completed-data label {
+        padding: 0 20px;
+    }
+
+    .hamburger {
+        top: 5px;
+    }
+
+    .logoBase img {
+        width: 115px;
+    }
+
+    header .top-head {
+        height: 34px;
+    }
+
+    .logOutBase .addProp {
+        line-height: 35px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .dashboard-date .form-inline label {
+        width: auto !important
+    }
+
+    .md-radio label {
+        font-size: 12px;
+    }
+
+    .selectType .md-radio {
+        margin-bottom: 15px
+    }
+}
+
+
+@media (min-width: 768px){
+    .loginbase .col-sm-6 {
+    width: 50%;
+    height: 400px;
+}
+
+}
