@@ -14,7 +14,7 @@ class Login(View):
 
         if username == '' and password == '':
             return render(request, self.template_name, {'message': 'All values are required'})
-        elif username == 'admin' and password == 'admin':
+        elif username == 'admin' and password == 'admin54321':
             return render(request, 'site/index.html')
         else:
             return render(request, self.template_name, {'message': 'Invalid Details'})
