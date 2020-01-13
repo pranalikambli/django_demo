@@ -272,6 +272,18 @@
                         <div id="leftside-navigation" class="nano">
                             <ul class="nano-content">
                                 <li>
+                                    <a href="{% url 'shodan_network_alerts' %}"><span>Network Alert</span></a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'shodan_alerts_list' %}"><span>Alert Information</span></a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'shodan_notifier' %}"><span>Alert Notifier</span></a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'shodan_triggers' %}"><span>Alert Triggers</span></a>
+                                </li>
+                                <li>
                                     <a href="{% url 'logout' %}"><span>Log Out</span></a>
                                 </li>
                             </ul>
