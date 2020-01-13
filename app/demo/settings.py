@@ -139,3 +139,4 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
 APP_STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+API_KEY = config('API_KEY')

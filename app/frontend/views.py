@@ -1,8 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.views import View
-from django.urls import reverse
-from urllib.parse import urlencode
 
 
 class Login(View):

@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    #back2Top {
+        display: none !important;
+    }
+</style>
+<!-- Body Elements -->
+<div class="content-wrapper">
+    <div class="container">
+        <h1>
+            {{details}}
+        </h1>
+    </div>
+</div>
+<link rel="stylesheet" href="{% static '/3rd_party/selectpicker/css/bootstrap-select.css' %}" />
+<script src="{% static '/3rd_party/selectpicker/js/bootstrap-select.js' %}"></script>
+<script src="{% static 'js/typeahead.js' %}"></script>
+{% endblock %}
