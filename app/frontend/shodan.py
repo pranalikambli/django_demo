@@ -30,7 +30,9 @@ def create_alert(name, ip, expires):
 
 
 def get_shodan_network_alert(request):
-
+    method = 'GET'
+    url = 'https://api.shodan.io/shodan/alert/{id}/info?key={YOUR_API_KEY}'
+    params = {'id': 'alert_id', 'YOUR_API_KEY': 'API_KEY'}
     myip = get_my_ip()
     if myip != '':
         try:
@@ -39,25 +41,41 @@ def get_shodan_network_alert(request):
             custom_headers = {"x-api-key": settings.API_KEY, "Content-Type": "application/json"}
             response = requests.get(api_url, headers=custom_headers)
             if response.status_code == 200:
-                return render(request, 'shodan/shodan_network_alert.html', {'details': response.json()})
-            return render(request, 'shodan/shodan_network_alert.html', {'details': {}})
+                return render(request, 'shodan/shodan_network_alert.html', {'details': response.json(),
+                                                                            'url': url, 'method': method,
+                                                                            'params': params
+                                                                            })
+            return render(request, 'shodan/shodan_network_alert.html', {'details': {},
+                                                                        'url': url, 'method': method,
+                                                                        'params': params
+                                                                        })
         except Exception as e:
             return {}
 
 
 def get_shodan_created_alerts(request):
-
+    method = 'GET'
+    url = 'https://api.shodan.io/shodan/alert/info?key={YOUR_API_KEY}'
+    params = 'API_KEY'
     try:
         api_url = 'https://api.shodan.io/shodan/alert/info?key={0}'.format(settings.API_KEY)
         custom_headers = {"x-api-key": settings.API_KEY, "Content-Type": "application/json"}
         response = requests.get(api_url, headers=custom_headers)
         if response.status_code == 200:
-            return render(request, 'shodan/shodan_alert_info.html', {'details': response.json()})
+            return render(request, 'shodan/shodan_alert_info.html', {'details': response.json(),
+                                                                     'url': url, 'method': method,
+                                                                     'params': params})
+        return render(request, 'shodan/shodan_alert_info.html', {'details': {},
+                                                                 'url': url, 'method': method,
+                                                                 'params': params})
     except Exception as e:
         return {}
 
 
 def get_shodan_notifier(request):
+    method = 'GET'
+    url = 'https://api.shodan.io/shodan/alert/{id}/notifier/{notifier_id}'
+    params = {'id': 'alert_id', 'notifier_id': 'notifier_id'}
     myip = get_my_ip()
     try:
         alert_dict = create_alert('home', myip, 0)
@@ -66,19 +84,29 @@ def get_shodan_notifier(request):
         response = requests.get(api_url, headers=custom_headers)
         if response.status_code == 200:
             return render(request, 'shodan/shodan_notifier.html', {'details': response.json()})
-        return render(request, 'shodan/shodan_notifier.html', {'details': {}})
+        return render(request, 'shodan/shodan_notifier.html', {'details': {},
+                                                                 'url': url, 'method': method,
+                                                                 'params': params})
     except Exception as e:
-        return render(request, 'shodan/shodan_notifier.html', {'details': {}})
+        return render(request, 'shodan/shodan_notifier.html', {'details': {},
+                                                                 'url': url, 'method': method,
+                                                                 'params': params})
 
 
 def get_shodan_triggers(request):
-
+    method = 'GET'
+    url = 'https://api.shodan.io/shodan/alert/triggers?key={YOUR_API_KEY}'
+    params = 'API_KEY'
     try:
         api_url = 'https://api.shodan.io/shodan/alert/triggers?key={0}'.format(settings.API_KEY)
         custom_headers = {"x-api-key": settings.API_KEY, "Content-Type": "application/json"}
         response = requests.get(api_url, headers=custom_headers)
         if response.status_code == 200:
-            return render(request, 'shodan/shodan_triggers.html', {'details': response.json()})
-        return render(request, 'shodan/shodan_triggers.html', {'details': {}})
+            return render(request, 'shodan/shodan_triggers.html', {'details': response.json(),
+                                                                 'url': url, 'method': method,
+                                                                 'params': params})
+        return render(request, 'shodan/shodan_triggers.html', {'details': {},
+                                                                 'url': url, 'method': method,
+                                                                 'params': params})
     except Exception as e:
         return {}

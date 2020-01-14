@@ -1296,3 +1296,12 @@ ul#investment-charter-new .investmentCharttable tr {
 .parsley-errors-list {
     color: #f00;
 }
+
+.prettyprint{
+    background: #fff;
+    font-family: Menlo,bitstream vera sans mono,dejavu sans mono,Monaco,Consolas,monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    padding: 10px;
+    }
