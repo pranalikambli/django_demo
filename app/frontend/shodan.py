@@ -1,6 +1,7 @@
 from shodan import Shodan
 from django.conf import settings
 from django.shortcuts import render
+from django.views import View
 
 import json
 
@@ -23,7 +24,7 @@ def create_alert(name, ip, expires):
     api = Shodan(settings.API_KEY)
     if myip != '':
         try:
-            create_alert = api.create_alert(name=name, ip=ip,  expires=expires)
+            create_alert = api.create_alert(name=name, ip=ip, expires=expires)
             return create_alert
         except Exception as e:
             return ''
@@ -85,12 +86,12 @@ def get_shodan_notifier(request):
         if response.status_code == 200:
             return render(request, 'shodan/shodan_notifier.html', {'details': response.json()})
         return render(request, 'shodan/shodan_notifier.html', {'details': {},
-                                                                 'url': url, 'method': method,
-                                                                 'params': params})
+                                                               'url': url, 'method': method,
+                                                               'params': params})
     except Exception as e:
         return render(request, 'shodan/shodan_notifier.html', {'details': {},
-                                                                 'url': url, 'method': method,
-                                                                 'params': params})
+                                                               'url': url, 'method': method,
+                                                               'params': params})
 
 
 def get_shodan_triggers(request):
@@ -103,10 +104,38 @@ def get_shodan_triggers(request):
         response = requests.get(api_url, headers=custom_headers)
         if response.status_code == 200:
             return render(request, 'shodan/shodan_triggers.html', {'details': response.json(),
-                                                                 'url': url, 'method': method,
-                                                                 'params': params})
+                                                                   'url': url, 'method': method,
+                                                                   'params': params})
         return render(request, 'shodan/shodan_triggers.html', {'details': {},
-                                                                 'url': url, 'method': method,
-                                                                 'params': params})
+                                                               'url': url, 'method': method,
+                                                               'params': params})
     except Exception as e:
         return {}
+
+
+class PostApi(View):
+    def get(self, request):
+        return render(request, 'shodan/post_api.html', {'status': 0})
+
+    def post(self, request):
+        api = request.POST.get('api')
+        payload = request.POST.get('json')
+        try:
+            dict = eval(payload)
+        except Exception as e:
+            return render(request, 'shodan/post_api.html', {'message': 'Json Format was not proper',
+                                                            'status': 0})
+
+        custom_headers = {"x-api-key": settings.API_KEY, "Content-Type": "application/json"}
+        try:
+            api_url = '{0}?key={1}'.format(api, settings.API_KEY)
+            response = requests.post(api_url, data=dict, headers=custom_headers)
+            if response.status_code == 200:
+                return render(request, 'shodan/post_api.html', {'details': response.json(),
+                                                                'status': 1})
+            else:
+                return render(request, 'shodan/post_api.html', {'details': response.json(),
+                                                                'status': 1})
+        except Exception as e:
+            return render(request, 'shodan/post_api.html', {'message': 'Something went wrong',
+                                                            'status': 0})
