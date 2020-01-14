@@ -12,5 +12,5 @@ urlpatterns = [
     path('shodan_alerts_list/', get_shodan_created_alerts, name='shodan_alerts_list'),
     path('shodan_notifier/', get_shodan_notifier, name='shodan_notifier'),
     path('shodan_triggers/', get_shodan_triggers, name='shodan_triggers'),
-    path('post_api/', PostApi.as_view(), name='post_api'),
+    path('api_calls/', ApiCalls.as_view(), name='api_calls'),
 ]

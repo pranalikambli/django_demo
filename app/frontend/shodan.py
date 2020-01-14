@@ -113,7 +113,7 @@ def get_shodan_triggers(request):
         return {}
 
 
-class PostApi(View):
+class ApiCalls(View):
     def get(self, request):
         return render(request, 'shodan/post_api.html', {'status': 0})
 
