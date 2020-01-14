@@ -118,24 +118,41 @@ class PostApi(View):
         return render(request, 'shodan/post_api.html', {'status': 0})
 
     def post(self, request):
-        api = request.POST.get('api')
+        get_api = request.POST.get('get_api')
+        post_api = request.POST.get('post_api')
         payload = request.POST.get('json')
-        try:
-            dict = eval(payload)
-        except Exception as e:
-            return render(request, 'shodan/post_api.html', {'message': 'Json Format was not proper',
-                                                            'status': 0})
-
+        method = request.POST.get('method')
         custom_headers = {"x-api-key": settings.API_KEY, "Content-Type": "application/json"}
-        try:
-            api_url = '{0}?key={1}'.format(api, settings.API_KEY)
-            response = requests.post(api_url, data=dict, headers=custom_headers)
-            if response.status_code == 200:
-                return render(request, 'shodan/post_api.html', {'details': response.json(),
-                                                                'status': 1})
-            else:
-                return render(request, 'shodan/post_api.html', {'details': response.json(),
-                                                                'status': 1})
-        except Exception as e:
-            return render(request, 'shodan/post_api.html', {'message': 'Something went wrong',
-                                                            'status': 0})
+        if method == 'get':
+            try:
+                api_url = '{0}?key={1}'.format(get_api, settings.API_KEY)
+                response = requests.get(api_url, headers=custom_headers)
+                if response.status_code == 200:
+                    return render(request, 'shodan/post_api.html', {'details': response.json(),
+                                                                    'status': 1})
+                else:
+                    return render(request, 'shodan/post_api.html', {'details': response.json(),
+                                                                    'status': 1})
+            except Exception as e:
+                return render(request, 'shodan/post_api.html', {'message': 'Something went wrong',
+                                                                'status': 0})
+
+        elif method == 'post':
+
+            try:
+                dict = eval(payload)
+            except Exception as e:
+                return render(request, 'shodan/post_api.html', {'message': 'Json Format was not proper',
+                                                                'status': 0})
+            try:
+                api_url = '{0}?key={1}'.format(post_api, settings.API_KEY)
+                response = requests.post(api_url, data=dict, headers=custom_headers)
+                if response.status_code == 200:
+                    return render(request, 'shodan/post_api.html', {'details': response.json(),
+                                                                    'status': 1})
+                else:
+                    return render(request, 'shodan/post_api.html', {'details': response.json(),
+                                                                    'status': 1})
+            except Exception as e:
+                return render(request, 'shodan/post_api.html', {'message': 'Something went wrong',
+                                                                'status': 0})
